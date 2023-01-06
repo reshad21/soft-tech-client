@@ -51,21 +51,28 @@ const Admin = () => {
                                 <label className="label">
                                     <span className="label-text font-bold">Product Name</span>
                                 </label>
-                                <input type="text" name='name' placeholder="name" className="input input-bordered" />
+                                <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-bold">Product Image Link</span>
+                                </label>
+                                <input type="text" name='image' placeholder="image link" className="input input-bordered" />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Product Price</span>
                                 </label>
-                                <input type="number" name='price' placeholder="price" className="input input-bordered" />
+                                <input type="number" name='price' placeholder="price" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Product Description</span>
                                 </label>
-                                <textarea name='details' className="textarea textarea-bordered" placeholder="Description"></textarea>
+                                <textarea name='details' className="textarea textarea-bordered" placeholder="Description" required></textarea>
                             </div>
 
                             <div className="form-control mt-6">
