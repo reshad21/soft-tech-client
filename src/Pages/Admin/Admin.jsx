@@ -15,6 +15,7 @@ const Admin = () => {
         }
         console.log(productInfo);
     }
+
     return (
         <div className='mx-auto max-w-7xl'>
             <div className="hero min-h-screen bg-base-200">
