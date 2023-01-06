@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
 const Admin = () => {
     const handleProductForm = (e) => {
@@ -25,6 +26,8 @@ const Admin = () => {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
+                toast.success('product added Successfully.');
+                form.reset();
             })
             .catch((error) => {
                 console.error('Error:', error);
