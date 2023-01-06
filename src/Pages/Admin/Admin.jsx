@@ -14,6 +14,23 @@ const Admin = () => {
             details
         }
         console.log(productInfo);
+
+        fetch('http://localhost:5000/product', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productInfo),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+
     }
 
     return (
