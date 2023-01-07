@@ -7,10 +7,12 @@ const Admin = () => {
         const form = e.target;
 
         const name = form.name.value;
+        const image = form.image.value;
         const price = form.price.value;
         const details = form.details.value;
         const productInfo = {
             name,
+            image,
             price,
             details
         }

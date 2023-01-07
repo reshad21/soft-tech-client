@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const { data: products, isLoading } = useQuery({
@@ -28,13 +29,15 @@ const Home = () => {
                     products?.map((product) => {
                         return (
                             <div className="card card-compact w-96 bg-base-100 shadow-xl" key={product?._id}>
-                                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                                <figure><img src={product?.image} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{product?.name}</h2>
                                     <p>{product?.details}</p>
                                     <div className="card-actions flex justify-between align-middle">
                                         <label htmlFor="" className='font-bold'>Price: {product?.price}</label>
-                                        <button className="btn btn-primary">Update Price</button>
+                                        <Link>
+                                            <button className="btn btn-primary">Update Price</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
