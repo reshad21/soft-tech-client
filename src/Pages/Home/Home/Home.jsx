@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const { data: products, isLoading } = useQuery({
+    const { data: products = [], isLoading } = useQuery({
         queryKey: ['myProducts'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/products');
@@ -21,23 +21,33 @@ const Home = () => {
         )
     }
 
+    // const handleProductUpdate = (id) => {
+    //     console.log(id);
+    // }
+
     return (
         <div className="mx-auto max-w-7xl">
             <h1>Home page:{products.length}</h1>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 align-middle justify-center">
                 {
-                    products?.map((product) => {
+                    products?.map(product => {
                         return (
                             <div className="card card-compact w-96 bg-base-100 shadow-xl" key={product?._id}>
                                 <figure><img src={product?.image} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{product?.name}</h2>
                                     <p>{product?.details}</p>
-                                    <div className="card-actions flex justify-between align-middle">
+                                    <div className="card-actions flex justify-between items-center">
                                         <label htmlFor="" className='font-bold'>Price: {product?.price}</label>
-                                        <Link>
-                                            <button className="btn btn-primary">Update Price</button>
-                                        </Link>
+
+                                        <div className="">
+                                            <Link to={`/product/${product?._id}`}><button className='btn btn-outline'>Update Price</button></Link>
+                                        </div>
+
+                                        {/* <div className="">
+                                            <label htmlFor="my-modal-3" className="btn">open modal</label>
+                                            <UpdateModal product={product}></UpdateModal>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
@@ -45,6 +55,8 @@ const Home = () => {
                     })
                 }
             </div>
+
+
 
         </div>
     );
