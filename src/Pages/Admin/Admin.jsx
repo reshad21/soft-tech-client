@@ -18,7 +18,7 @@ const Admin = () => {
         }
         console.log(productInfo);
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://soft-tech-server.vercel.app/product', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

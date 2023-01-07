@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/product/:id',
                 element: <ProductInfo></ProductInfo>,
-                loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`),
+                loader: ({ params }) => fetch(`https://soft-tech-server.vercel.app/product/${params.id}`),
             }
         ]
     },

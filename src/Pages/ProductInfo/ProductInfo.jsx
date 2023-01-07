@@ -12,7 +12,7 @@ const ProductInfo = () => {
         const updatePrice = { price }
         console.log(updatePrice);
 
-        fetch(`http://localhost:5000/product/${product._id}`, {
+        fetch(`https://soft-tech-server.vercel.app/product/${product._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
